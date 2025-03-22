@@ -1,0 +1,57 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/*
+Dab           Dab [0 2 -1 0 0 0 0]     1e-06;
+alphatab      alphatab [0 0 0 0 0 0 0] 1;
+*/
+
+phases (phase1 phase2);
+
+phase1
+{
+    transportModel  Newtonian;
+    nu              [0 2 -1 0 0 0 0] 1e-06;
+    rho             [1 -3 0 0 0 0 0] 1000;
+}
+
+phase2
+{
+    transportModel  Newtonian;
+    nu              [0 2 -1 0 0 0 0] 1e-06;
+    rho             [1 -3 0 0 0 0 0] 990;
+}
+
+/*
+phase1
+{
+    transportModel  Newtonian;
+    nu              [ 0 2 -1 0 0 0 0 ]  1e-06;
+    rho             [ 1 -3 0 0 0 0 0 ] 1000;
+}
+
+phase2
+{
+    transportModel  Newtonian;
+    nu              [ 0 2 -1 0 0 0 0 ]  1.48e-05;
+    rho             [ 1 -3 0 0 0 0 0 ] 1;
+}
+*/
+
+//sigma         [ 1 0 -2 0 0 0 0 ] 0.07;
+sigma           [ 1 0 -2 0 0 0 0 ] 0.0;
+
+// ************************************************************************* //
